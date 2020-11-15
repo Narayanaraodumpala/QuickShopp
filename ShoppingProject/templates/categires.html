@@ -1,0 +1,295 @@
+
+{%  load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Quick Shoppie</title>
+      <link href="{% static 'style.css' %}" rel="stylesheet">
+  </head>
+     <style >
+body{
+    border-top: solid 5px #999;
+
+background:url({% static 'pink-shopping-bag-tropical-monstera-leaf-wallpaper-preview.jpg' %}) no-repeat center center fixed ;
+  background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+
+}
+      </style>
+  <body >
+  <br>
+<div >
+{% include 'nabs.html' %}
+</div>
+<br><br><br>
+
+<!-- /hero area-->
+<div align="left" class="images">
+    <div id="zoom-in">
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; <a href="{% url 'formal' %}"><img src="{% static 'images/categories/pexels-photo-1337477.jpeg' %}" style="border-radius: 0.8cm;width:70px;height: 70px"> <b>Formals</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="{% url 'suites' %}" ><img src="{% static 'images/suites/su4.jpg' %}"  style="border-radius: 0.8cm;width:70px;height: 70px">&nbsp;&nbsp; <b>Suites</b></a>  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <a href="{% url 'kurthas' %}"> <img src="{% static 'images/kurthas/pmk3.jpg' %}" style="border-radius: 0.8cm;width:70px;height: 70px"> &nbsp;&nbsp;`<b>Men-Kurthas</b></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="{% url 'tshirts' %}"><img src="{% static 'images/categories/t-shirts/pexels-photo-1232459.jpeg' %}" style="border-radius: 0.8cm;width:70px;height: 70px">&nbsp;&nbsp;<b>T-Shirts</b></a>
+  <br><br><br><br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'casuals' %}" ><img src="{% static 'images/casuals/cas4.jpg' %}" style="border-radius: 0.8cm;width:70px;height: 70px"> &nbsp;&nbsp;<b>Men-Casuals</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="{% url 'sarees' %}" ><img src="{% static 'images/sarees/sar1.jpg' %}" style="border-radius: 0.8cm;width:70px;height: 70px"> &nbsp;&nbsp;<b>Sarees</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="{% url 'l-kurthas' %}"><img src="{% static 'images/kurthas/ku6.jpg' %}" style="border-radius: 0.8cm;width:70px;height: 70px"> &nbsp;&nbsp; &nbsp;<b>Ladies-Kurthas</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="{% url 'dresses' %}"><img src="{% static 'images/dresses/dr3.jpg' %}" style="border-radius: 0.8cm;width:70px;height: 70px"> &nbsp;&nbsp;<b>Ladies-Dresses</b></a> <br><br><br><br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; <a href="{% url 'bags' %}" ><img src="{% static 'images/bags/bag3.jpg' %}" style="border-radius: 0.8cm;width:70px;height: 70px">&nbsp;&nbsp;<b>Bags</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'shoe' %}" ><img src="{% static 'images/categories/shoe 2.jpg' %}" style="border-radius: 0.8cm;width:70px;height: 70px"> &nbsp;&nbsp;<b>Shoes</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'watches' %}" ><img src="{% static 'images/watches/watch5.jpeg' %}" style="border-radius: 0.8cm;width:70px;height: 70px"> &nbsp;&nbsp;<b>Watches</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'goggules' %}" ><img src="{% static 'images/speticuls/sp18.jpg' %}" style="border-radius: 0.8cm;width:70px;height: 70px"> &nbsp;&nbsp;<b>Speticuls</b></a>&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+</div>
+
+
+<! -- /categories-->
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12 text-left">
+        <h2 class="section-title">Top Categories For For Men </h2>
+      </div><br><br><br>
+      <!-- categories item -->
+      <div class="col-lg-4 col-md-6 mb-50">
+        <div class="card p-0">
+          <div class="border-bottom text-center hover-zoom-img">
+            <a href="{% url 'shirts' %}"><img src="{% static 'images/categories/pexels-photo-1337477.jpeg' %}" class="rounded-top img-fluid w-100" alt="product-img"></a>
+          </div>
+          <ul class="d-flex list-unstyled pl-0 categories-list">
+            <li class="m-0 hover-zoom-img">
+              <a href="{% url 'shirts' %}"><img src="{% static 'images/categories/3shirt.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
+            </li>
+            <li class="m-0 hover-zoom-img">
+              <a href="{% url 'shirts' %}"><img src="{% static 'images/categories/1shirt.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
+            </li>
+            <li class="m-0 hover-zoom-img">
+              <a href="{% url 'shirts' %}"><img src="{% static 'images/categories/2 shirt.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
+            </li>
+          </ul>
+          <div class="px-4 py-3 border-top">
+            <h4 class="d-inline-block mb-0 mt-1">Clothing</h4>
+            <a href="{% url 'shirts' %}" class="btn btn-sm btn-outline-primary float-right">view more</a>
+          </div>
+        </div>
+      </div>
+      <!-- categories item -->
+      <div class="col-lg-4 col-md-6 mb-50">
+        <div class="card p-0">
+          <div class="border-bottom text-center hover-zoom-img">
+           <a href="{% url 'shoe' %}" ><img src="/static/images/categories/product-big-2.jpg" class="rounded-top img-fluid w-100" alt="product-img">
+           </a></div>
+          <ul class="d-flex list-unstyled pl-0 categories-list">
+            <li class="m-0 hover-zoom-img">
+              <a href="{% url 'shoe' %}" ><img src="{% static 'images/categories/shoe 2.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
+            </li>
+            <li class="m-0 hover-zoom-img">
+              <a href="{% url 'shoe' %}" ><img src="{% static 'images/categories/shoe 3.png' %}" class="img-fluid w-100" alt="product-img"></a>
+            </li>
+            <li class="m-0 hover-zoom-img">
+              <a href="{% url 'shoe' %}" ><img src="{% static 'images/categories/shoes1.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
+            </li>
+          </ul>
+          <div class="px-4 py-3 border-top">
+            <h4 class="d-inline-block mb-0 mt-1">Shoes</h4>
+            <a  href="{% url 'shoe' %}" class="btn btn-sm btn-outline-primary float-right">view more</a>
+          <pre>
+          </pre>
+          </div>
+        </div>
+      </div>
+      <!-- categories item -->
+      <div class="col-lg-4 col-md-6 mb-50">
+        <div class="card p-0">
+          <div class="border-bottom text-center hover-zoom-img">
+            <a href="{%  url 'bags' %}"><img src="{% static 'images/bags/bag9.jpg' %}" class="rounded-top img-fluid w-100" alt="product-img"></a>
+          </div>
+          <ul class="d-flex list-unstyled pl-0 categories-list">
+            <li class="m-0 hover-zoom-img">
+              <a href="{%  url 'bags' %}"><img src="/static/images/categories/product-sm-7.jpg" class="img-fluid w-100" alt="product-img"></a>
+            </li>
+            <li class="m-0 hover-zoom-img">
+              <a href="{%  url 'watches' %}"><img src="{% static 'images/bags/bag2.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
+            </li>
+            <li class="m-0 hover-zoom-img">
+             <a href="{%  url 'goggules' %}"> <img src="{% static 'images/bags/bag14.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
+            </li>
+          </ul>
+          <div class="px-4 py-3 border-top">
+            <h4 class="d-inline-block mb-0 mt-1">Accessories</h4>
+            <a href="{% url 'bags' %}" class="btn btn-sm btn-outline-primary float-right">view more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- /categories -->
+
+
+<!-- /deal -->
+
+  <div align="left">
+      <div class="col-lg-12 text-left">
+        <h2 class="section-title">Top Categories For WoMen</h2>
+      </div><br>
+
+      <div class="row">
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 px-0 mb-4">
+            <div class="instagram-post mx-2"><a href="{% url 'women_menu' %}" ><img class="img-fluid w-100" src="/static/images/instagram/item-1.png" alt="instagram-image"></a>
+            <ul class="list-inline text-center">
+              <li class="list-inline-item"><a href="%7b%7blink%7d%7d.html" target="_blank" class="text-white"></a></li>
+              <li class="list-inline-item"><a href="%7b%7blink%7d%7d.html" target="_blank" class="text-white"></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 px-0 mb-4">
+          <div class="instagram-post mx-2"><img class="img-fluid w-100" src="/static/images/instagram/item-2.png" alt="instagram-image">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item"><a href="%7b%7blink%7d%7d.html" target="_blank" class="text-white"></a></li>
+              <li class="list-inline-item"><a href="%7b%7blink%7d%7d.html" target="_blank" class="text-white"></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 px-0 mb-4">
+          <div class="instagram-post mx-2"><img class="img-fluid w-100"   src="{% static 'images/ksssssssssssssss.jpg' %}" alt="instagram-image">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item"><a href="%7b%7blink%7d%7d.html" target="_blank" class="text-white"></a></li>
+              <li class="list-inline-item"><a href="%7b%7blink%7d%7d.html" target="_blank" class="text-white"></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 px-0 mb-4">
+          <div class="instagram-post mx-2"><img class="img-fluid w-100" src="/static/images/instagram/item-4.png" alt="instagram-image">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item"><a href="%7b%7blink%7d%7d.html" target="_blank" class="text-white"></a></li>
+              <li class="list-inline-item"><a href="%7b%7blink%7d%7d.html" target="_blank" class="text-white"></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 px-0 mb-4">
+          <div class="instagram-post mx-2"><img class="img-fluid w-100" src="/static/images/instagram/item-5.png" alt="instagram-image">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item"><a href="%7b%7blink%7d%7d.html" target="_blank" class="text-white"></a></li>
+              <li class="list-inline-item"><a href="%7b%7blink%7d%7d.html" target="_blank" class="text-white"></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 px-0 mb-4">
+          <div class="instagram-post mx-2"><img class="img-fluid w-100" src="/static/images/instagram/item-6.png" alt="instagram-image">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item"><a href="%7b%7blink%7d%7d.html" target="_blank" class="text-white"></a></li>
+              <li class="list-inline-item"><a href="%7b%7blink%7d%7d.html" target="_blank" class="text-white"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- /without instagram image -->
+  </div>
+</section>
+<!-- /instagram -->
+
+<!-- service -->
+  <br>
+
+<!-- /newsletter -->
+
+<!-- Newsletter Modal -->
+
+<!-- /Newsletter Modal -->
+
+
+<!-- footer -->
+  <br>
+<footer class="bg-light">
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 mb-5 mb-md-0 text-center text-sm-left">
+          <h4 class="mb-4">Contact</h4>
+          <p>20464 Hirthe Curve Suite, Emardton, CT 12471-4107</p>
+          <p>+5(305) 785-0437</p>
+          <p>info@example.com</p>
+          <ul class="list-inline social-icons">
+            <li class="list-inline-item"><a href="#"><i class="ti-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="ti-twitter-alt"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="ti-vimeo-alt"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="ti-google"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-5 mb-md-0 text-center text-sm-left">
+          <h4 class="mb-4">Category</h4>
+          <ul class="pl-0 list-unstyled">
+            <li class="mb-2"><a class="text-color" href="shop.html">Men</a></li>
+            <li class="mb-2"><a class="text-color" href="shop.html">Women</a></li>
+            <li class="mb-2"><a class="text-color" href="shop.html">Kids</a></li>
+            <li class="mb-2"><a class="text-color" href="shop.html">Accessories</a></li>
+            <li class="mb-2"><a class="text-color" href="shop.html">Shoe</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-5 mb-md-0 text-center text-sm-left">
+          <h4 class="mb-4">Useful Link</h4>
+          <ul class="pl-0 list-unstyled">
+            <li class="mb-2"><a class="text-color" href="about.html">News &amp; Tips</a></li>
+            <li class="mb-2"><a class="text-color" href="about.html">About Us</a></li>
+            <li class="mb-2"><a class="text-color" href="address.html">Support</a></li>
+            <li class="mb-2"><a class="text-color" href="shop.html">Our Shop</a></li>
+            <li class="mb-2"><a class="text-color" href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 text-center text-sm-left">
+          <h4 class="mb-4">Our Policies</h4>
+          <ul class="pl-0 list-unstyled">
+            <li class="mb-2"><a class="text-color" href="404.html">Privacy Policy</a></li>
+            <li class="mb-2"><a class="text-color" href="404.html">Terms &amp; Conditions</a></li>
+            <li class="mb-2"><a class="text-color" href="404.html">Cookie Policy</a></li>
+            <li class="mb-2"><a class="text-color" href="404.html">Terms of Sale</a></li>
+            <li class="mb-2"><a class="text-color" href="dashboard.html">Free Shipping &amp; Returns</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+    <br>
+  <div class="bg-dark py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 text-center text-md-left mb-4 mb-md-0 align-self-center">
+          <p class="text-white mb-0">Logo © 2018 all right reserved</p>
+        </div>
+        <div class="col-md-2 text-center text-md-left mb-4 mb-md-0">
+          <img src="/static/images/logo-alt.png" alt="logo">
+        </div>
+        <div class="col-md-5 text-center text-md-right mb-4 mb-md-0">
+          <ul class="list-inline">
+            <li class="list-inline-item"><img class="img-fluid rounded atm-card-img" src="/static/images/payment-card/card-1.jpg" alt="card"></li>
+            <li class="list-inline-item"><img class="img-fluid rounded atm-card-img" src="/static/images/payment-card/card-2.jpg" alt="card"></li>
+            <li class="list-inline-item"><img class="img-fluid rounded atm-card-img" src="/static/images/payment-card/card-3.jpg" alt="card"></li>
+            <li class="list-inline-item"><img class="img-fluid rounded atm-card-img" src="/static/images/payment-card/card-4.jpg" alt="card"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- /footer -->
+
+</div>
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

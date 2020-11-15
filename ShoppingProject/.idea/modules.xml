@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Django/DentalProject/.idea/DentalProject.iml" filepath="$PROJECT_DIR$/../Django/DentalProject/.idea/DentalProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ShoppingProject.iml" filepath="$PROJECT_DIR$/.idea/ShoppingProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Ambika/Stemcellproject/.idea/Stemcellproject.iml" filepath="$PROJECT_DIR$/../Ambika/Stemcellproject/.idea/Stemcellproject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Swiggyproject/.idea/Swiggyproject.iml" filepath="$PROJECT_DIR$/../Swiggyproject/.idea/Swiggyproject.iml" />
+    </modules>
+  </component>
+</project>
