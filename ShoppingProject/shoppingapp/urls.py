@@ -50,6 +50,10 @@ urlpatterns = [
     path('clgbags/',views.clgbags,name='clgbags'),
     path('backpack/',views.backpack,name='backpack'),
     path('h_bags/',views.h_bags,name='h_bags'),
+    path(
+       'formsl_shoes/',views.formsl_shoes,name='formsl_shoes'
+    ),
+    path('casual_shoes/',views.casual_shoes,name='casual_shoes')
 
 
 ]

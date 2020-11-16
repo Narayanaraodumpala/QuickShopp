@@ -108,15 +108,23 @@ def kids_boys_dresses(request):
 
 
 def clgbags(request):
-    res = ProductModel.objects.filter(product_categire=20)
+    res = ProductModel.objects.filter(product_categire=19)
     return render(request, 'clgbags.html', {'res': res})
 
 def backpack(request):
-    res = ProductModel.objects.filter(product_categire=17)
+    res = ProductModel.objects.filter(product_categire=18)
     return render(request, 'backpack.html',{'res': res} )
 
 def h_bags(request):
-    res = ProductModel.objects.filter(product_categire=19)
+    res = ProductModel.objects.filter(product_categire=17)
     return render(request, 'h-bags.html',{'res': res} )
 
 
+def formsl_shoes(request):
+    res = ProductModel.objects.filter(product_categire=20)
+    return render(request,'formsl_shoes.html',{'res': res})
+
+
+def casual_shoes(request):
+    res = ProductModel.objects.filter(product_categire=21)
+    return render(request,'casuals_shoes.html',{'res': res})

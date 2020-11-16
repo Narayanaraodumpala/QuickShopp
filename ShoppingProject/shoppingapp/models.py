@@ -11,11 +11,11 @@ class Categire(models.Model):
 class ProductModel(models.Model):
     product_id =models.IntegerField(null=True)
     product_name = models.CharField(max_length=100 ,null=True)
-    product_price = models.FloatField(null=True)
+    product_price = models.CharField(max_length=30,null=True)
     product_categire = models.ForeignKey(Categire ,on_delete=models.CASCADE ,null=True)
     current_status = models.CharField(max_length=15 ,null=True)
     product_for = models.CharField(max_length=20 ,null=True)
-    valid_upto = models.FloatField(null=True)
+    valid_upto = models.CharField(max_length=30,null=True)
     sizes =[('XSML' ,'XSML'),
            ('M', 'M'),
            ('SML' ,'SML'),
