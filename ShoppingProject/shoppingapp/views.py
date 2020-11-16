@@ -31,12 +31,13 @@ def bags(request):
 
 
 def watches(request):
-    return render(request,'watches.html')
+    res = ProductModel.objects.filter(product_categire=10)
+    return render(request,'watches.html',{'res':res})
 
 
 def goggules(request):
-
-    return render(request,'goggules.html',)
+    res = ProductModel.objects.filter(product_categire=12)
+    return render(request,'goggules.html',{'res':res})
 
 
 
