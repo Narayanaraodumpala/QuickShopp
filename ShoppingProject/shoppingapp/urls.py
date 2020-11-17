@@ -30,6 +30,9 @@ urlpatterns = [
     path('shirts/',views.shirts,name='shirts'),
     path('shoe/',views.shoe,name='shoe'),
     path('bags/',views.bags,name='bags'),
+    path('kids/',views.kids,name='kids'),
+path('boath/',views.boath,name='boath'),
+    path('menu/',views.menu,name='menu'),
 
 
      path('watches/',views. watches,name='watches'),
@@ -53,7 +56,10 @@ urlpatterns = [
     path(
        'formsl_shoes/',views.formsl_shoes,name='formsl_shoes'
     ),
-    path('casual_shoes/',views.casual_shoes,name='casual_shoes')
+    path('casual_shoes/',views.casual_shoes,name='casual_shoes'),
+    path('buy_product/',views.buy_product,name='buy_product'),
+    path('buy_add/',views.buy_add,name='buy_add'),
+    path('men/',views.men,name='men')
 
 
 ]

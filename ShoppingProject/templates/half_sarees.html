@@ -46,6 +46,7 @@ background:url({% static 'shopping.jpg' %}) no-repeat center center fixed ;
   <div class="container">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'categires' %}">Categireis</a></li>
       <li class="breadcrumb-item active" aria-current="page">half-sarees</li>
     </ol>
   </div>
@@ -61,14 +62,16 @@ background:url({% static 'shopping.jpg' %}) no-repeat center center fixed ;
        {% for res in res %}
           <div align="center" style="padding:30px;float: left" ><br>
 
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ res.product_image.url }}" style="border-radius: 0.7cm"  >&nbsp;&nbsp;&nbsp;<br><br>
-              <h4 style="color: red"><b><i>{{ res.product_name }}&nbsp;{{ res.product_categire }}</i></b></h4>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'buy_product' %}?pname={{ res.product_name }}&pprice={{ res.product_price }}&pimage={{ res.product_image }}"><img src="{{ res.product_image.url }}" style="border-radius: 0.7cm"  ></a>&nbsp;&nbsp;&nbsp;<br><br>
+
+              <h4 style="color: red"><b><i>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'buy_product' %}?pname={{ res.product_name }}&pprice={{ res.product_price }}&pimage={{ res.product_image }}">
+                  {{ res.product_name }}&nbsp;{{ res.product_categire }}</a></i></b></h4>
             <br><br>
 
 
                 <div>
-                     <button type="submit" style="color: green" class="btn btn-outline-warning" >Know More</button>
-
+                    <a href="{% url 'buy_product' %}?pname={{ res.product_name }}&pprice={{ res.product_price }}&pimage={{ res.product_image }}"> <button type="submit" style="color: darkgray;border-radius: 0.8cm" class="btn btn-outline-warning" >Know More</button>
+                    </a>
                 <div >
            </div>
                     </div>
@@ -85,14 +88,6 @@ background:url({% static 'shopping.jpg' %}) no-repeat center center fixed ;
           <!-- product -->
 
 
-
-<pre>
-
-
-
-
-</pre>
-   <br>
 
 
 
