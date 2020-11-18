@@ -13,21 +13,83 @@
     <title>Doctor Dentals</title>
   </head>
   <body  >
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <img src="{% static 'online-shopping.png' %}" width="80" height="80"> <a class="navbar-brand" href="#">Quick Shoppieee Store</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categiries
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'men' %}">Men</a>
+          <a class="dropdown-item" href="{% url 'women_menu' %}">Women</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'kids' %}">kids</a>
+             <a class="dropdown-item" href="{% url 'boath' %}">For Boath</a>
+        </div>
+      </li>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Menu
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'formal' %}">Formals</a>
+          <a class="dropdown-item" href="{% url 'suites' %}">Suites</a>
+            <a class="dropdown-item" href="{% url 'kurthas' %}">Kurthas</a>
+          <a class="dropdown-item" href="{% url 'casuals' %}">Casuals</a>
+            <a class="dropdown-item" href="{% url 'tshirts' %}">T-Shirts</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'sarees' %}">Sarees</a>
+             <a class="dropdown-item" href="{% url 'half_sarees' %}">Half-Sarees</a>
+             <a class="dropdown-item" href="{% url 'dresses' %}">ladies Dresses</a>
+             <a class="dropdown-item" href="{% url 'l-kurthas' %}">ladies kurtis</a>
+        </div>
 
 
+      </li>
 
-    <nav class="nav">
-         <img src="{% static 'carts.png' %}" width="80" height="80"> <a class="navbar-brand" href="#">Quick Shoppieee Store</a>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Menu
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'kids_half' %}">Baby Half-Sarexies</a>
+          <a class="dropdown-item" href="{% url 'kids_dresses' %}">Baby Dresses</a>
+            <a class="dropdown-item" href="{% url 'kids_boys_dresses' %}">Boy Dresses</a>
+            <a class="dropdown-item" href="{% url 'casual_shoes' %}">Casual shoes</a>
+            <a class="dropdown-item" href="{% url 'formsl_shoes' %}">Formal Shoes</a>
 
-           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="nav-link active" href="{% url 'home' %}" style="color:green">Home</a>
-               <a class="nav-link" href="{% url 'categires' %}" style="color: green">Categires</a>
-<a class="nav-link" href="{% url 'menu' %}" style="color:green">Menu</a>
-                   <a class="nav-link" href="" style="color:green">About Q-S-S</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'backpack' %}">Backpacks/Travel bags</a>
+             <a class="dropdown-item" href="{% url 'clgbags' %}">College Bags</a>
+             <a class="dropdown-item" href="{% url 'h_bags' %}">Hand bags</a>
+            <a class="dropdown-item" href="{% url 'watches' %}">Watches</a>
+            <a class="dropdown-item" href="{% url 'goggules' %}">Speticles</a>
 
-        <a class="nav-link " href="" style="color:green">Login/SignUp</a>
-             </nav>
+        </div>
 
 
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="" tabindex="-1" >Login/Signup</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input style="border-radius: 0.7cm;" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button style="border-radius: 0.8cm;" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
 
 
     <!-- Optional JavaScript; choose one of the two! -->

@@ -40,87 +40,9 @@ background:url({% static 'shopping.jpg' %}) no-repeat center center fixed ;
 <!-- /hero area-->
 
 
-<! -- /categories-->
-<section class="section">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-12 text-left">
-        <h2 class="section-title">Top Categories For For Men </h2>
-      </div><br><br><br>
-      <!-- categories item -->
-      <div class="col-lg-4 col-md-6 mb-50">
-        <div class="card p-0">
-          <div class="border-bottom text-center hover-zoom-img">
-            <a href="{% url 'shirts' %}"><img src="{% static 'images/categories/pexels-photo-1337477.jpeg' %}" class="rounded-top img-fluid w-100" alt="product-img"></a>
-          </div>
-          <ul class="d-flex list-unstyled pl-0 categories-list">
-            <li class="m-0 hover-zoom-img">
-              <a href="{% url 'shirts' %}"><img src="{% static 'images/categories/3shirt.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
-            </li>
-            <li class="m-0 hover-zoom-img">
-              <a href="{% url 'shirts' %}"><img src="{% static 'images/categories/1shirt.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
-            </li>
-            <li class="m-0 hover-zoom-img">
-              <a href="{% url 'shirts' %}"><img src="{% static 'images/categories/2 shirt.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
-            </li>
-          </ul>
-          <div class="px-4 py-3 border-top">
-            <h4 class="d-inline-block mb-0 mt-1">Clothing</h4>
-            <a href="{% url 'shirts' %}" class="btn btn-sm btn-outline-primary float-right">view more</a>
-          </div>
-        </div>
-      </div>
-      <!-- categories item -->
-      <div class="col-lg-4 col-md-6 mb-50">
-        <div class="card p-0">
-          <div class="border-bottom text-center hover-zoom-img">
-           <a href="{% url 'shoe' %}" ><img src="/static/images/categories/product-big-2.jpg" class="rounded-top img-fluid w-100" alt="product-img">
-           </a></div>
-          <ul class="d-flex list-unstyled pl-0 categories-list">
-            <li class="m-0 hover-zoom-img">
-              <a href="{% url 'shoe' %}" ><img src="{% static 'images/categories/shoe 2.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
-            </li>
-            <li class="m-0 hover-zoom-img">
-              <a href="{% url 'shoe' %}" ><img src="{% static 'images/categories/shoe 3.png' %}" class="img-fluid w-100" alt="product-img"></a>
-            </li>
-            <li class="m-0 hover-zoom-img">
-              <a href="{% url 'shoe' %}" ><img src="{% static 'images/categories/shoes1.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
-            </li>
-          </ul>
-          <div class="px-4 py-3 border-top">
-            <h4 class="d-inline-block mb-0 mt-1">Shoes</h4>
-            <a  href="{% url 'shoe' %}" class="btn btn-sm btn-outline-primary float-right">view more</a>
-          <pre>
-          </pre>
-          </div>
-        </div>
-      </div>
-      <!-- categories item -->
-      <div class="col-lg-4 col-md-6 mb-50">
-        <div class="card p-0">
-          <div class="border-bottom text-center hover-zoom-img">
-            <a href="{%  url 'bags' %}"><img src="{% static 'images/bags/bag9.jpg' %}" class="rounded-top img-fluid w-100" alt="product-img"></a>
-          </div>
-          <ul class="d-flex list-unstyled pl-0 categories-list">
-            <li class="m-0 hover-zoom-img">
-              <a href="{%  url 'bags' %}"><img src="/static/images/categories/product-sm-7.jpg" class="img-fluid w-100" alt="product-img"></a>
-            </li>
-            <li class="m-0 hover-zoom-img">
-              <a href="{%  url 'watches' %}"><img src="{% static 'images/bags/bag2.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
-            </li>
-            <li class="m-0 hover-zoom-img">
-             <a href="{%  url 'goggules' %}"> <img src="{% static 'images/bags/bag14.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
-            </li>
-          </ul>
-          <div class="px-4 py-3 border-top">
-            <h4 class="d-inline-block mb-0 mt-1">Accessories</h4>
-            <a href="{% url 'bags' %}" class="btn btn-sm btn-outline-primary float-right">view more</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<div align="center">
+    {% include 'formen.html' %}
+</div>
 
 <!-- /categories -->
 

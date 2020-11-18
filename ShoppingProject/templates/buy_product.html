@@ -47,6 +47,8 @@ background:url({% static 'shopping.jpg' %}) no-repeat center center fixed ;
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
     <li class="breadcrumb-item"><a href="{% url 'categires' %}">Categireis</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{% for res in res %}{{  res.product_for }} {% endfor %}</li>
+
       <li class="breadcrumb-item active" aria-current="page">{% for res in res %}{{  res.product_categire }} {% endfor %}</li>
     </ol>
   </div>
@@ -69,6 +71,12 @@ background:url({% static 'shopping.jpg' %}) no-repeat center center fixed ;
             <b><i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Current Status :-  &nbsp;&nbsp;&nbsp; <span style="color: red;font-family: 'French Script MT';font-size: 30px">{{ res.current_status }}</span></i></b><br><br>
              <b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For  :-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: red;font-family: 'French Script MT';font-size: 30px"> {{ res.product_for }}</span> </i></b><br><br>
              <b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Stock Available Upto :- &nbsp;&nbsp;&nbsp;  <span style="color: red;font-family: 'French Script MT';font-size: 30px"> {{ res.valid_upto }} Years</span>  </i></b><br><br>
+                             <b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Original Size  :- &nbsp;&nbsp;&nbsp;  <span style="color: red;font-family: 'French Script MT';font-size: 30px"> {{ res.sizes }} </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Enter Your Size :-
+
+      <input type="text" >&nbsp;&nbsp;<input type="submit" value="Enter"  style="border-radius: 0.9cm" class="btn btn-outline-warning">
+
+ </i></b><br><br>
+
                  <b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Product Description  :- &nbsp;&nbsp;&nbsp;  <span style="color: red;font-family: 'French Script MT';font-size: 30px"> {{ res.product_description }} </span>  </i></b><br><br>
         </th>
         <th>

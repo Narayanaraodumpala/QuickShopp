@@ -52,9 +52,10 @@
             <div class="product text-center" id="zoom-in">
               <div class="product-thumb">
                 <div class="overflow-hidden position-relative" style="height: 500px">
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'buy_product' %}?pname={{ res.product_name }}&pprice={{ res.product_price }}&pimage={{ res.product_image }}">
+<img  style="border: 0.2px  silver solid;" class="img-fluid w-100 mb-3 img-first" src="{{ i.product_image.url }}" alt="product-img">
+                    <span>{{ i.product_name }}</span></a>
 
-                   &nbsp;&nbsp;&nbsp; <img  style="border: 0.2px  silver solid;" class="img-fluid w-100 mb-3 img-first" src="{{ i.product_image.url }}" alt="product-img">
-                    <span>dsag djh </span>
 
 
 
