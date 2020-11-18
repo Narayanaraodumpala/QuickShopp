@@ -1,5 +1,8 @@
-from django.shortcuts import render
-from .models import ProductModel
+from django.shortcuts import render,redirect
+from .models import *
+from django.contrib.auth import authenticate, login,logout
+from django.contrib.auth.models import User
+
 
 
 # Create your views here.
@@ -161,3 +164,43 @@ def boath(request):
 def menu(request):
 
     return render(request, 'menu.html')
+
+
+def login_signin(request):
+    error=False
+    if request.method == 'POST':
+        dic=request.POST
+        u=dic['user']
+        p=dic['pwd']
+        user=authenticate(username=u,password=p)
+        if user:
+            login(request,user)
+            return redirect('home')
+        else:
+            error=True
+    return render(request,'login_signin.html',{'error':error})
+
+
+def signup(request):
+    error=False
+    if request.method == 'POST':
+        dic = request.POST
+        u = dic['user']
+        p = dic['pwd']
+
+        e=dic['email']
+        m=dic['mob']
+        a=dic['add']
+        i=request.FILES['img']
+        userdata=User.objects.filter(username=u)
+        if not  userdata:
+         user= User.objects.create_user(username=u,password=p,email=e)
+         UserDetail.objects.create(usr=user,image=i,mobile=m,address=a)
+         return redirect('login_signin')
+        else:
+            error=True
+    return render(request,'signup.html',{'error':error})
+
+def logoutt(request):
+    logout(request)
+    return redirect('home')

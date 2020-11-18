@@ -59,7 +59,11 @@ path('boath/',views.boath,name='boath'),
     path('casual_shoes/',views.casual_shoes,name='casual_shoes'),
     path('buy_product/',views.buy_product,name='buy_product'),
     path('buy_add/',views.buy_add,name='buy_add'),
-    path('men/',views.men,name='men')
+    path('men/',views.men,name='men'),
+    path('login_signin/',views.login_signin,name='login_signin'),
+    path('signup/',views.signup,name='signup'),
+path('logout/',views.logoutt,name='logout'),
+
 
 
 ]
