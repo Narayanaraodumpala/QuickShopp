@@ -63,6 +63,8 @@ path('boath/',views.boath,name='boath'),
     path('login_signin/',views.login_signin,name='login_signin'),
     path('signup/',views.signup,name='signup'),
 path('logout/',views.logoutt,name='logout'),
+    path('add_to_cart/<int:pk>',views.add_to_cart,name='add_to_cart'),
+    path('view_cart/',views.view_cart,name='view_cart')
 
 
 

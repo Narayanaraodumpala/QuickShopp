@@ -44,3 +44,12 @@ class UserDetail(models.Model):
 
     def __str__(self):
         return self.usr.username
+
+
+class AddtocartModel(models.Model):
+    usr=models.ForeignKey(User,on_delete=models.CASCADE,null=True)
+    pro=models.ForeignKey(ProductModel,on_delete=models.CASCADE,null=True)
+    quantity=models.IntegerField(null=True)
+    total_price=models.FloatField(null=True)
+    size=models.CharField(max_length=10,null=True)
+

@@ -65,19 +65,23 @@ background:url({% static 'shopping.jpg' %}) no-repeat center center fixed ;
 
 
 </pre>
+
+
  {% for res in res %}
+<form action="{% url 'add_to_cart' res.product_id %}" method="post">
+    {% csrf_token %}
 <table align="center">
     <tr>
         <th width="450px">
 
              <b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brand :-<span style="color: red;font-size: 20px">{{ res.product_name }} {{ res.product_categire }}</span> </i></b><br><br>
-           <b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Price :- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: red;font-size: 20px"> {{ res.product_price }} Bucks</span> </i></b><br><br>
+           <b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Price :- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: red;font-size: 20px"> {{ res.product_price }} Bucks</span>&nbsp;&nbsp;  Quantity <input type="number" name="pquantity" required> </i></b><br><br>
             <b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In Stock :-  &nbsp;&nbsp;&nbsp; <span style="color: red;font-size: 20px">{{ res.current_status }}</span></i></b><br><br>
              <b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For  :-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: red;font-size: 20px"> {{ res.product_for }}</span> </i></b><br><br>
              <b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stock Available Upto :- &nbsp;&nbsp;&nbsp;  <span style="color: red;font-size: 20px"> {{ res.valid_upto }} Years</span>  </i></b><br><br>
                              <b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Original Size  :- &nbsp;&nbsp;&nbsp;  <span style="color: red;font-size: 20px"> {{ res.sizes }} </span><br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your Size :-
 
-      <input type="text" >&nbsp;&nbsp;<input type="submit" value="Enter"  style="border-radius: 0.9cm" class="btn btn-outline-warning">
+      <input type="text" name="size" required >&nbsp;&nbsp;<input type="submit" value="Enter"  style="border-radius: 0.9cm" class="btn btn-outline-warning">
 
  </i></b><br><br>
 
@@ -89,17 +93,21 @@ background:url({% static 'shopping.jpg' %}) no-repeat center center fixed ;
         </th>
         <th width="450px">
             <b><i><span style="color: white"> Product Description  :-</span> &nbsp;&nbsp;&nbsp;  <span style="color: red;font-size: 20px"> {{ res.product_description }} </span>  </i></b><br><br>
+<input type="hidden" value="{{ res.product_id }}" name="pid">
+            <input type="hidden" value="{{ res.product_name }}" name="pname">
+            <input type="hidden" value="{{ res.product_price }}" name="price">
+            <input type="hidden" value="{{ res.product_image }}" name="pimage">
+            <input type="hidden" value="{{ res.product_categire }}" name="pcat">
+            <input type="hidden" value="{{ res.valid_upto }}" name="pvalid">
+            <input type="hidden" value="{{ res.product_for }}" name="pfor">
+            <input type="hidden" value="{{ res.current_status }}" name="pstatus">
 
         </th>
 
     </tr>
-</table>
-     <pre>
-     </pre>
-     <table align="left">
 <tr >
-   <th >
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="{% url 'buy_add' %}"><button type="submit" style="color: darkgray;border-radius: 0.8cm" class="btn btn-outline-warning" >&nbsp;&nbsp;&nbsp; Add To Cart&nbsp;&nbsp;&nbsp;</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'buy_add' %}"><button type="submit" style="color: blue;border-radius: 0.8cm" class="btn btn-outline-warning" > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buy Now&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </button></a>
+   <th align="left" >
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button type="submit" style="color: darkgray;border-radius: 0.8cm" class="btn btn-outline-warning" >&nbsp;&nbsp;&nbsp; Add To Cart&nbsp;&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
    </th>
 </tr>
@@ -108,6 +116,7 @@ background:url({% static 'shopping.jpg' %}) no-repeat center center fixed ;
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Countdown Is Started-------</h5></th>
      </tr>
 </table>
+</form>
      {% endfor %}
 
 
