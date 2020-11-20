@@ -222,31 +222,32 @@ def add_to_cart(request,pk):
    prodata=ProductModel.objects.get(product_id=pk)
    usr=request.user
    if request.method == 'POST':
-       pid = request.POST['pid']
-       pname = request.POST['pname']
+
        price = request.POST['price']
-       pcat = request.POST['pcat']
-       pimage = request.POST['pimage']
-       pvalid = request.POST['pvalid']
-       pfor = request.POST['pfor']
-       pstatus = request.POST['pstatus']
+
        quantity = request.POST['pquantity']
        size = request.POST['size']
        total = float(price) * int(quantity)
-       print(pid)
-       print(pname)
-       print(price)
-       print(pcat)
-       print(pimage)
-       print(pvalid)
+
+
        print('t=', total)
-       print(pfor)
-       print(pstatus)
+
        print(quantity)
        print(size)
+
        AddtocartModel.objects.create(usr=usr,pro=prodata,quantity=quantity,total_price=total,size=size)
-       return redirect('home')
+       return redirect('view_cart')
 
 
 def view_cart(request):
-    return render(request,'view_cart.html')
+    cartdata = AddtocartModel.objects.filter(usr=request.user)
+    g_total = 0
+    for i in cartdata:
+        g_total += i.total_price
+    return render(request,'view_cart.html',{'total':g_total})
+
+
+def remove_cart(request,pk):
+    print(pk)
+    AddtocartModel.objects.filter(pro__product_id=pk).delete()
+    return redirect('view_cart')

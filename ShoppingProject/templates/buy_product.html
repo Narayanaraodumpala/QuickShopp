@@ -19,7 +19,7 @@
 body{
     border-top: solid 5px #999;
 
-background:url({% static 'shopping.jpg' %}) no-repeat center center fixed ;
+background: no-repeat center center fixed ;
   background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -81,7 +81,7 @@ background:url({% static 'shopping.jpg' %}) no-repeat center center fixed ;
              <b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stock Available Upto :- &nbsp;&nbsp;&nbsp;  <span style="color: red;font-size: 20px"> {{ res.valid_upto }} Years</span>  </i></b><br><br>
                              <b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Original Size  :- &nbsp;&nbsp;&nbsp;  <span style="color: red;font-size: 20px"> {{ res.sizes }} </span><br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your Size :-
 
-      <input type="text" name="size" required >&nbsp;&nbsp;<input type="submit" value="Enter"  style="border-radius: 0.9cm" class="btn btn-outline-warning">
+      <input type="text" name="size" required >
 
  </i></b><br><br>
 
@@ -92,22 +92,17 @@ background:url({% static 'shopping.jpg' %}) no-repeat center center fixed ;
 
         </th>
         <th width="450px">
-            <b><i><span style="color: white"> Product Description  :-</span> &nbsp;&nbsp;&nbsp;  <span style="color: red;font-size: 20px"> {{ res.product_description }} </span>  </i></b><br><br>
-<input type="hidden" value="{{ res.product_id }}" name="pid">
-            <input type="hidden" value="{{ res.product_name }}" name="pname">
+            <b><i><span > Product Description  :-</span> &nbsp;&nbsp;&nbsp;  <span style="color: red;font-size: 20px"> {{ res.product_description }} </span>  </i></b><br><br>
+
             <input type="hidden" value="{{ res.product_price }}" name="price">
-            <input type="hidden" value="{{ res.product_image }}" name="pimage">
-            <input type="hidden" value="{{ res.product_categire }}" name="pcat">
-            <input type="hidden" value="{{ res.valid_upto }}" name="pvalid">
-            <input type="hidden" value="{{ res.product_for }}" name="pfor">
-            <input type="hidden" value="{{ res.current_status }}" name="pstatus">
+
 
         </th>
 
     </tr>
 <tr >
    <th align="left" >
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button type="submit" style="color: darkgray;border-radius: 0.8cm" class="btn btn-outline-warning" >&nbsp;&nbsp;&nbsp; Add To Cart&nbsp;&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" style="color: darkgray;border-radius: 0.8cm" class="btn btn-outline-warning" >&nbsp;&nbsp;&nbsp; Add To Cart&nbsp;&nbsp;&nbsp;</button><br><br>
 
    </th>
 </tr>
