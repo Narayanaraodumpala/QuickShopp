@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.views.generic.base import TemplateView
 from django.urls import path
 from django.views.generic.base import  TemplateView
 
@@ -24,7 +25,8 @@ from shoppingapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home,name='home'),
+    path('',TemplateView.as_view(template_name='index.html'),name='home'),
+
     path('cloths/',views.cloths,name='cloths'),
     path('women_menu/',views.women_menu,name='women_menu'),
     path('shirts/',views.shirts,name='shirts'),
@@ -59,13 +61,22 @@ path('boath/',views.boath,name='boath'),
     path('casual_shoes/',views.casual_shoes,name='casual_shoes'),
     path('buy_product/',views.buy_product,name='buy_product'),
     path('buy_add/',views.buy_add,name='buy_add'),
+    path('dashboard/',views.dashboard,name='dashboard'),
     path('men/',views.men,name='men'),
     path('login_signin/',views.login_signin,name='login_signin'),
     path('signup/',views.signup,name='signup'),
 path('logout/',views.logoutt,name='logout'),
     path('add_to_cart/<int:pk>',views.add_to_cart,name='add_to_cart'),
     path('view_cart/',views.view_cart,name='view_cart'),
-    path('remove_cart/<int:pk>',views.remove_cart,name='remove_cart')
+    path('remove_cart/<int:pk>',views.remove_cart,name='remove_cart'),
+    path('checkout/<int:pk>',views.Checkout.as_view(),name='checkout'),
+    path('search/',views.search,name='search'),
+    path('profile/', views.profile, name='profile'),
+    path('orders/', views.orders, name='orders'),
+    path('shipping/', views.shipping, name='shipping'),
+
+
+
 
 
 

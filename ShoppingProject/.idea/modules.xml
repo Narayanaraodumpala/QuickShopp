@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../git/rest_api/Complete_Rest_Project/.idea/Complete_Rest_Project.iml" filepath="$PROJECT_DIR$/../git/rest_api/Complete_Rest_Project/.idea/Complete_Rest_Project.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Django/DentalProject/.idea/DentalProject.iml" filepath="$PROJECT_DIR$/../Django/DentalProject/.idea/DentalProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ShoppingProject.iml" filepath="$PROJECT_DIR$/.idea/ShoppingProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Ambika/Stemcellproject/.idea/Stemcellproject.iml" filepath="$PROJECT_DIR$/../Ambika/Stemcellproject/.idea/Stemcellproject.iml" />

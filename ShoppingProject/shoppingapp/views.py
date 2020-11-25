@@ -1,16 +1,19 @@
 from django.shortcuts import render,redirect
+from django.views.generic.base import View
+
 from .models import *
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import  login_required
+from django.core.paginator import  Paginator,EmptyPage,PageNotAnInteger
 
-
+if __name__ == '__main__':
+    from django.contrib import messages
 
 
 # Create your views here.
 
-def home(request):
-    return render(request, 'index.html')
+
 
 @login_required(login_url='login_signin')
 def cloths(request):
@@ -50,6 +53,8 @@ def categires(request):
 @login_required(login_url='login_signin')
 def formal(request):
     res = ProductModel.objects.filter(product_categire=1)
+
+
     return render(request, 'formal.html', {'model': res})
 
 @login_required(login_url='login_signin')
@@ -176,9 +181,9 @@ def login_signin(request):
         error = False
         if request.method == 'POST':
             dic = request.POST
-            u = dic['user']
-            p = dic['pwd']
-            user = authenticate(username=u, password=p)
+            usr = dic['user']
+            pwd = dic['pwd']
+            user = authenticate(username=usr, password=pwd)
             if user:
                 login(request, user)
                 return redirect('home')
@@ -220,7 +225,9 @@ def logoutt(request):
 
 def add_to_cart(request,pk):
    prodata=ProductModel.objects.get(product_id=pk)
-   usr=request.user
+   usr = request.user
+   caedata=AddtocartModel.objects.filter(usr=usr,pro=prodata).first()
+
    if request.method == 'POST':
 
        price = request.POST['price']
@@ -228,15 +235,15 @@ def add_to_cart(request,pk):
        quantity = request.POST['pquantity']
        size = request.POST['size']
        total = float(price) * int(quantity)
+       if caedata:
+
+            return render(request,'buy_product.html',{'message':'sorry this item  is already added'})
+       else:
+           AddtocartModel.objects.create(usr=usr, pro=prodata, quantity=quantity, total_price=total, size=size)
+   return redirect('view_cart')
 
 
-       print('t=', total)
 
-       print(quantity)
-       print(size)
-
-       AddtocartModel.objects.create(usr=usr,pro=prodata,quantity=quantity,total_price=total,size=size)
-       return redirect('view_cart')
 
 
 def view_cart(request):
@@ -251,3 +258,76 @@ def remove_cart(request,pk):
     print(pk)
     AddtocartModel.objects.filter(pro__product_id=pk).delete()
     return redirect('view_cart')
+
+from  .forms import  *
+import random
+
+
+class Checkout(View):
+    def get(self,request,pk=None):
+        form=OrderForm()
+        return render(request,'checkout.html',{'form':form})
+
+    def post(self,request,pk):
+        print('hghavv gs')
+        ran=random.randint(100000000,85744585525)
+
+        prodata=AddtocartModel.objects.get(pro__product_id=pk)
+        print('pk=',pk)
+        fname=request.POST['fullname']
+        mobile = request.POST['mobile']
+        alt_mbl = request.POST['alternative_mobile']
+        house = request.POST['house_no']
+        area = request.POST.get('area')
+        addr1 = request.POST['address1']
+        addr2 = request.POST['address2']
+        pinc = request.POST['pincode']
+        order_status='confirmed'
+
+        print(fname)
+        OrderModel.objects.create(usr=request.user,
+                                  pro=prodata.pro,
+                                  fullname=fname,
+                                  mobile=mobile,
+                                  alternative_mobile=alt_mbl,house_no=house,
+                                  area=area,address1=addr1,address2=addr2,
+                                  pincode=pinc,order_id=ran,amount=prodata.total_price,
+                                  order_status=order_status)
+        addd=AddtocartModel.objects.filter(pro=prodata.pro_id).delete()
+        return redirect('view_cart')
+
+
+
+
+
+def search(request):
+    if request.method == 'POST':
+     search= request.POST['search']
+     print(search)
+     if search:
+       res= ProductModel.objects.filter(product_categire__categirie__icontains=search)
+       print(res)
+       print(res)
+       if res:
+                return render(request,'search.html',{'search':res})
+    pass
+
+
+def dashboard(request):
+    profile=UserDetail.objects.filter(usr=request.user)
+    print('profile=',profile)
+    return render(request,'dashboard.html',{'profile':profile})
+
+
+def profile(request):
+    profile = UserDetail.objects.filter(usr=request.user)
+    return render(request,'profile.html',{'profile':profile})
+
+
+def orders(request):
+    profile = OrderModel.objects.filter(usr=request.user)
+    return render(request,'orders.html',{'profile':profile})
+
+
+def shipping(request):
+    return render(request,'shipping.html')

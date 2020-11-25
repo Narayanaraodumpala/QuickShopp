@@ -19,7 +19,7 @@
 body{
     border-top: solid 5px #999;
 
-background: no-repeat center center fixed ;
+background:url("{% static 'shopping.jpg' %}") no-repeat center center fixed ;
   background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -46,10 +46,8 @@ background: no-repeat center center fixed ;
   <div class="container">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-    <li class="breadcrumb-item"><a href="{% url 'categires' %}">Categireis</a></li>
-          <li class="breadcrumb-item active" aria-current="page">{% for res in res %}{{  res.product_for }} {% endfor %}</li>
+    <li class="breadcrumb-item"><a href="{% url 'categires' %}">Order_product</a></li>
 
-      <li class="breadcrumb-item active" aria-current="page">{% for res in res %}{{  res.product_categire }} {% endfor %}</li>
     </ol>
   </div>
 </nav>
@@ -58,67 +56,79 @@ background: no-repeat center center fixed ;
 
 <!-- shop -->
  <!-- product-list -->
-
 <pre>
-
 
 
 
 </pre>
 
 
- {% for res in res %}
-<form action="{% url 'add_to_cart' res.product_id %}" method="post">
+<form  method="post" enctype="multipart/form-data">
     {% csrf_token %}
-<table align="center">
-    <tr>
-        <th width="450px">
 
-             <b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brand :-<span style="color: red;font-size: 20px">{{ res.product_name }} {{ res.product_categire }}</span> </i></b><br><br>
-           <b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Price :- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: red;font-size: 20px"> {{ res.product_price }} Bucks</span>&nbsp;&nbsp;  Quantity <input type="number" name="pquantity" required> </i></b><br><br>
-            <b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In Stock :-  &nbsp;&nbsp;&nbsp; <span style="color: red;font-size: 20px">{{ res.current_status }}</span></i></b><br><br>
-             <b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For  :-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: red;font-size: 20px"> {{ res.product_for }}</span> </i></b><br><br>
-             <b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stock Available Upto :- &nbsp;&nbsp;&nbsp;  <span style="color: red;font-size: 20px"> {{ res.valid_upto }} Years</span>  </i></b><br><br>
-                             <b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Original Size  :- &nbsp;&nbsp;&nbsp;  <span style="color: red;font-size: 20px"> {{ res.sizes }} </span><br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your Size :-
+  <div class="form-group row" align="center">
 
-      <input type="text" name="size" required >
+    <div class="col-sm-10">
+     <b><i>Fullname &nbsp;&nbsp;</i></b>   = &nbsp;&nbsp;  {{ form.fullname }}
+    </div>
+  </div>
+  <div class="form-group row" align="center">
 
- </i></b><br><br>
+    <div class="col-sm-10">
+     <b><i> Mobile 1 &nbsp;&nbsp; </i></b>  =&nbsp;&nbsp;  {{ form.mobile}}
+    </div>
+  </div>
+      <div class="form-group row" align="center">
 
-        </th>
-           <th width="450px">
+    <div class="col-sm-10">
+     <b><i> Mobile 2 &nbsp;&nbsp; </i></b>  =&nbsp;&nbsp; {{ form.alternative_mobile}}
+    </div>
+  </div>
+      <div class="form-group row" align="center">
 
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ res.product_image.url }}" style="border-radius: 0.9cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="col-sm-10">
+     <b><i> House_No &nbsp;&nbsp; </i></b>  =&nbsp;&nbsp; {{ form.house_no }}
+    </div>
+  </div>
+  <div class="form-group row" align="center">
 
-        </th>
-        <th width="450px">
-            <b><i><span > Product Description  :-</span> &nbsp;&nbsp;&nbsp;  <span style="color: red;font-size: 20px"> {{ res.product_description }} </span>  </i></b><br><br>
+    <div class="col-sm-10">
+     <b><i> Area &nbsp;&nbsp; </i></b>  =&nbsp;&nbsp; {{ form.area }}
+    </div>
+  </div>
+      <div class="form-group row" align="center">
 
-            <input type="hidden" value="{{ res.product_price }}" name="price">
+    <div class="col-sm-10">
+     <b><i> Address 1 &nbsp;&nbsp; </i></b>  =&nbsp;&nbsp; {{ form.address1 }}
+    </div>
+  </div>
 
+      <div class="form-group row" align="center">
 
-        </th>
+    <div class="col-sm-10">
+     <b><i> Address 2 &nbsp;&nbsp; </i></b>  =&nbsp;&nbsp; {{ form.address2 }}
+    </div>
+  </div>
+  <div class="form-group row" align="center">
 
-    </tr>
-<tr >
-   <th align="left" >
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" style="color: darkgray;border-radius: 0.8cm" class="btn btn-outline-warning" >&nbsp;&nbsp;&nbsp; Add To Cart&nbsp;&nbsp;&nbsp;</button><br><br>
+    <div class="col-sm-10">
+    <b><i> Pincode  &nbsp;&nbsp; </i></b>  =&nbsp;&nbsp; {{ form.pincode }}
+    </div><br><br>
 
-   </th>
-</tr>
-     <tr>
-         <th><br><br><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;------- Hurry Up Sale Ends Soon<br><br>
-             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Countdown Is Started-------</h5></th>
-     </tr>
-</table>
-</form>
-     {% endfor %}
-<div align="center">
-{% if message %}
-{{ message }}
-{% endif %}
+  </div>
+
+<div  align="center">
+    <button type="submit" class="btn btn-outline-warning">Order</button>
+
 </div>
+</form>
+
+
 <pre>
+
+
+
+
 
 
 

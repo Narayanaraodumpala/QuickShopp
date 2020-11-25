@@ -83,21 +83,26 @@
                  <li class="nav-item">
         <a class="nav-link" href="{% url 'logout' %}" tabindex="-1" >Logout</a>
       </li>
+                  <li class="nav-item">
+        <a class="nav-link" href="{% url 'dashboard' %}" tabindex="-1" >{{ request.user.username }}
+        <br>
+        DashBoard
+        </a>
+      </li>
 
       {% else %}
        <li class="nav-item">
         <a class="nav-link" href="{% url 'login_signin' %}" tabindex="-1" >Login/Signup</a>
       </li>
         {% endif %}
-    <li class="nav-item">
-        <a class="nav-link" href="" tabindex="-1" >{{ request.user.username }}</a>
-      </li>
-     <li class="nav-item">
 
-      </li>
+
+
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input style="border-radius: 0.7cm;" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="post">
+
+        {% csrf_token %}
+      <input style="border-radius: 0.7cm;" class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
       <button style="border-radius: 0.8cm;" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>

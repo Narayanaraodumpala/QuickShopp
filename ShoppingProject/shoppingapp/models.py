@@ -53,3 +53,34 @@ class AddtocartModel(models.Model):
     total_price=models.FloatField(null=True)
     size=models.CharField(max_length=10,null=True)
 
+    def __str__(self):
+        return self.pro.product_name
+
+order_status=[('pending','pending'),
+              ('confirmed','confirmed'),
+              ('cancelled','cancelled'),
+              ('shipped','shipped'),
+              ('out_for_delivered','out_for_delivered')
+              ]
+
+class OrderModel(models.Model):
+    usr=models.ForeignKey(User,on_delete=models.CASCADE,null=True)
+    pro=models.ForeignKey(ProductModel,on_delete=models.CASCADE,null=True)
+    fullname=models.CharField(max_length=50,null=True)
+    mobile = models.IntegerField(null=True)
+    alternative_mobile = models.IntegerField(null=True)
+    house_no=models.CharField(max_length=30,null=True)
+    area=models.CharField(max_length=50,null=True)
+    address1=models.CharField(max_length=50,null=True)
+    address2=models.CharField(max_length=50,null=True)
+    pincode=models.IntegerField(null=True)
+    order_id=models.IntegerField(null=True,blank=True)
+    payment_id=models.CharField(max_length=500,null=True,blank=True)
+    payment_status=models.CharField(max_length=500,default='Not Done')
+    amount=models.FloatField(null=True)
+    order_status=models.CharField(max_length=50,null=True,choices=order_status)
+
+
+    def __str__(self):
+        return self.pro.product_name
+

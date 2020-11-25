@@ -19,6 +19,7 @@
     <orderEntry type="module" module-name="Stemcellproject" />
     <orderEntry type="module" module-name="DentalProject" />
     <orderEntry type="module" module-name="Swiggyproject" />
+    <orderEntry type="module" module-name="Complete_Rest_Project" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
