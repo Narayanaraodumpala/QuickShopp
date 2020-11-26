@@ -74,6 +74,9 @@ path('logout/',views.logoutt,name='logout'),
     path('profile/', views.profile, name='profile'),
     path('orders/', views.orders, name='orders'),
     path('shipping/', views.shipping, name='shipping'),
+    path(
+       'developer/',views.developer,name='developer'
+    )
 
 
 

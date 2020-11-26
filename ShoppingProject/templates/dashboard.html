@@ -46,7 +46,7 @@ background: no-repeat center center fixed ;
   <div class="container">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-        <li class="breadcrumb-item"><a href="">DashBoard</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">DashBoard</a></li>
     </ol>
   </div>
 </nav>
@@ -58,20 +58,6 @@ background: no-repeat center center fixed ;
 
 </pre>
 
-{% load static %}
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-
-    <title>Quick Shoppiee</title>
-  </head>
-  <body  >
 <nav class="navbar navbar-expand-lg navbar-light bg-light"><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
   </button>
 
@@ -98,6 +84,16 @@ background: no-repeat center center fixed ;
     </ul>
   </div>
 </nav>
+<pre>
+
+
+</pre>
+<h3 align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Welcome back To DashBoard</h3><br><br>
+
+
+     <h3 align="center" >  Welcome <span style="color: red;font-family: 'French Script MT';font-size: 70px">{{ request.user }} </span>. From Here U'll Manage Ur Profile , Orders & Shipping Informations
+
+     </h3>
 
 
 

@@ -46,7 +46,7 @@ background: no-repeat center center fixed ;
   <div class="container">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-        <li class="breadcrumb-item"><a href="">DashBoard</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">DashBoard</a></li>
         <li class="breadcrumb-item"><a href="">Orders</a></li>
     </ol>
   </div>
@@ -91,16 +91,44 @@ background: no-repeat center center fixed ;
 
 
     </pre>
+<h3 align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orders </h3><br><br>
+
     <div align="center">
         {% for i in request.user.ordermodel_set.all %}
-           <span><b>Order Id &nbsp; --&nbsp; </b></span> {{ i.order_id }}<br><br>
-
-            <span><b>Order Status &nbsp; --&nbsp; </b></span>{{ i.order_status }}<br><br>
-            <span><b>Product Id &nbsp; --&nbsp; </b></span>{{ i.pro.product_id }}<br><br>
+            <table align="center">
+    <tr>
+    <th>Order - Image &nbsp;&nbsp;
+        <img src={{ i.pro.product_image.url  }} width="200"  style="border-radius: 6.0cm " height="200" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </th>
+        <th>
+          <span><b>Order Id &nbsp; --&nbsp; </b></span> {{ i.order_id }}<br><br>
+            <table align="center">
+                <tr>
+                    <th>
+                     <span><b>Order Status &nbsp; --&nbsp; </b></span>{{ i.order_status }}<br><br>
+                        <span><b>Product Id &nbsp; --&nbsp; </b></span>{{ i.pro.product_id }}<br><br>
           <span><b>Product Name  &nbsp; --&nbsp; </b></span>  {{ i.pro.product_name}}<br><br>
            <span><b>Product Categire &nbsp; --&nbsp; </b></span> {{ i.pro.product_categire }}<br><br>
            <span><b>Total price &nbsp; --&nbsp; </b></span>{{ i.amount }}<br><br>
            <span><b>payment Status &nbsp; --&nbsp; </b></span> {{ i.payment_status }}<br><br>
+                        <table align="center">
+                            <tr>
+                                  <th>
+
+                    </th>
+                            </tr>
+                        </table>
+                    </th>
+
+
+                </tr>
+            </table>
+        </th>
+</tr></table>
+
+
+
+
 <hr><hr>
         {% endfor %}
     </div>

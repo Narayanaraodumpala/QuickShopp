@@ -63,66 +63,103 @@ background:url("{% static 'shopping.jpg' %}") no-repeat center center fixed ;
 </pre>
 
 
-<form  method="post" enctype="multipart/form-data">
+        <form  method="post" enctype="multipart/form-data">
     {% csrf_token %}
 
+ <table align="center">
+     <tr>
+         <th  width="800px" height="450px">
+<table align="center">
+    <tr>
+        <th  style="background-color:gainsboro;border: solid 1.8px bisque ">
+            <br><br>
+            <img src="{{ pimg }}">
+           &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: red;font-size: 30px;"> Order Summery</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <span style="color: blue;font-size: 30px">{{ pname }}&nbsp;{{ pcat }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: blue;font-size: 30px">{{ price }}&nbsp;bucks&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+        </th>
+    </tr>
+</table>
+         </th><th width="1150px" height="450px">
+
+     <b><i>Fullname&nbsp;&nbsp; </i></b>   = &nbsp;&nbsp; {{ form.fullname }}<br><br>
+
+
+     <b><i> Mobile 1 &nbsp;&nbsp; </i></b>  =&nbsp;&nbsp;&nbsp;  {{ form.mobile }}<br><br>
+
+         <b><i> Mobile 2 &nbsp;&nbsp; </i></b>  =&nbsp;&nbsp;&nbsp; {{ form.alternative_mobile }}<br><br>
+
+     <b><i> House_No &nbsp;&nbsp; </i></b>  =&nbsp;&nbsp; {{ form.house_no }}<br><br>
+
+           <b><i> Area &nbsp;&nbsp; </i></b>  =&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; {{ form.area }}<br><br>
+
+          <b><i> Address 1 &nbsp;&nbsp; </i></b>  =&nbsp;&nbsp;&nbsp; {{ form.address1 }}<br><br>
+
+         <b><i> Address 2 &nbsp;&nbsp; </i></b>  =&nbsp;&nbsp;&nbsp; {{ form.address2 }}<br><br>
+
+         <b><i> Pincode  &nbsp;&nbsp; </i></b>  =&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;{{ form.pincode }}<br><br><br>
+
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button type="submit" class="btn btn-outline-warning">Order</button>
+
+
+
+
+
+     </th></tr>
+ </table>
+
+
   <div class="form-group row" align="center">
 
-    <div class="col-sm-10">
-     <b><i>Fullname &nbsp;&nbsp;</i></b>   = &nbsp;&nbsp;  {{ form.fullname }}
-    </div>
+
   </div>
-  <div class="form-group row" align="center">
+      <div class="form-group row" align="center">
 
     <div class="col-sm-10">
-     <b><i> Mobile 1 &nbsp;&nbsp; </i></b>  =&nbsp;&nbsp;  {{ form.mobile}}
+
     </div>
   </div>
       <div class="form-group row" align="center">
 
     <div class="col-sm-10">
-     <b><i> Mobile 2 &nbsp;&nbsp; </i></b>  =&nbsp;&nbsp; {{ form.alternative_mobile}}
-    </div>
-  </div>
-      <div class="form-group row" align="center">
-
-    <div class="col-sm-10">
-     <b><i> House_No &nbsp;&nbsp; </i></b>  =&nbsp;&nbsp; {{ form.house_no }}
     </div>
   </div>
   <div class="form-group row" align="center">
 
     <div class="col-sm-10">
-     <b><i> Area &nbsp;&nbsp; </i></b>  =&nbsp;&nbsp; {{ form.area }}
+
     </div>
   </div>
       <div class="form-group row" align="center">
 
     <div class="col-sm-10">
-     <b><i> Address 1 &nbsp;&nbsp; </i></b>  =&nbsp;&nbsp; {{ form.address1 }}
+
     </div>
   </div>
 
       <div class="form-group row" align="center">
 
     <div class="col-sm-10">
-     <b><i> Address 2 &nbsp;&nbsp; </i></b>  =&nbsp;&nbsp; {{ form.address2 }}
+
     </div>
   </div>
   <div class="form-group row" align="center">
 
     <div class="col-sm-10">
-    <b><i> Pincode  &nbsp;&nbsp; </i></b>  =&nbsp;&nbsp; {{ form.pincode }}
+
     </div><br><br>
 
   </div>
 
 <div  align="center">
-    <button type="submit" class="btn btn-outline-warning">Order</button>
+
 
 </div>
 </form>
-
+<div align="center">
+    
+</div>
 
 <pre>
 

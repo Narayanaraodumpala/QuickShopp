@@ -264,9 +264,18 @@ import random
 
 
 class Checkout(View):
-    def get(self,request,pk=None):
+    def get(self,request,pk):
+        pname=request.GET.get('pname')
+        pprice=request.GET.get('pprice')
+        pcat = request.GET.get('pcat')
+
+
+        print(pname)
+        print(pprice)
+
         form=OrderForm()
-        return render(request,'checkout.html',{'form':form})
+
+        return render(request,'checkout.html',{'form':form, 'pname':pname,'price':pprice,'pcat':pcat, })
 
     def post(self,request,pk):
         print('hghavv gs')
@@ -286,15 +295,16 @@ class Checkout(View):
 
         print(fname)
         OrderModel.objects.create(usr=request.user,
-                                  pro=prodata.pro,
-                                  fullname=fname,
-                                  mobile=mobile,
-                                  alternative_mobile=alt_mbl,house_no=house,
-                                  area=area,address1=addr1,address2=addr2,
-                                  pincode=pinc,order_id=ran,amount=prodata.total_price,
-                                  order_status=order_status)
-        addd=AddtocartModel.objects.filter(pro=prodata.pro_id).delete()
+                                      pro=prodata.pro,
+                                      fullname=fname,
+                                      mobile=mobile,
+                                      alternative_mobile=alt_mbl, house_no=house,
+                                      area=area, address1=addr1, address2=addr2,
+                                      pincode=pinc, order_id=ran, amount=prodata.total_price,
+                                      order_status=order_status)
+        addd = AddtocartModel.objects.filter(pro=prodata.pro_id).delete()
         return redirect('view_cart')
+
 
 
 
@@ -331,3 +341,7 @@ def orders(request):
 
 def shipping(request):
     return render(request,'shipping.html')
+
+
+def developer(request):
+    return render(request,'developer.html')
