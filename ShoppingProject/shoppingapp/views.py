@@ -6,6 +6,10 @@ from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import  login_required
 from django.core.paginator import  Paginator,EmptyPage,PageNotAnInteger
+from django.core.mail import send_mail
+from ShoppingProject.settings import EMAIL_HOST_USER
+import socket
+socket.getaddrinfo('localhost', 8080)
 
 if __name__ == '__main__':
     from django.contrib import messages
@@ -211,6 +215,7 @@ def signup(request):
                 user = User.objects.create_user(username=u, password=p, email=e)
                 UserDetail.objects.create(usr=user, image=i, mobile=m, address=a)
                 return redirect('login_signin')
+
             else:
                 error = True
         return render(request, 'signup.html', {'error': error})
@@ -302,9 +307,13 @@ class Checkout(View):
                                       area=area, address1=addr1, address2=addr2,
                                       pincode=pinc, order_id=ran, amount=prodata.total_price,
                                       order_status=order_status)
+        Email=request.user.email
+        print('email=',Email)
+        Subject=" Hello " + request.user.username + "...! This Is Quick Shoppieee.This Mail Reagarding for Ur Order From Us...."
+        Message=" Mr/Ms " + request.user.username +" You Oredered " +" Order-Product Name  "+str(prodata.pro.product_name)+" , Quantity "+str(prodata.quantity)+"  Total Price is the  "+str(prodata.total_price)+"... Your Order Is Confirmed. please Stay With Us For More Updates ..."
+        send_mail(Subject,Message,EMAIL_HOST_USER,[Email])
         addd = AddtocartModel.objects.filter(pro=prodata.pro_id).delete()
         return redirect('view_cart')
-
 
 
 
@@ -345,3 +354,13 @@ def shipping(request):
 
 def developer(request):
     return render(request,'developer.html')
+
+
+def deal_day(request):
+    res=ProductModel.objects.filter(product_categire=22)
+    return render(request,'deal_day.html',{'res': res})
+
+
+def season_sale(request):
+
+    return render(request,'season_sale.html')

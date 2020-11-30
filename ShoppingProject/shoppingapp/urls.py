@@ -21,10 +21,12 @@ from django.views.generic.base import  TemplateView
 
 from ShoppingProject import settings
 from shoppingapp import views
+from rest_framework.authtoken import views as au
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('gen_token/',au.obtain_auth_token),
     path('',TemplateView.as_view(template_name='index.html'),name='home'),
 
     path('cloths/',views.cloths,name='cloths'),
@@ -35,6 +37,7 @@ urlpatterns = [
     path('kids/',views.kids,name='kids'),
 path('boath/',views.boath,name='boath'),
     path('menu/',views.menu,name='menu'),
+    path('season_sale/',views.season_sale,name='season_sale'),
 
 
      path('watches/',views. watches,name='watches'),
@@ -76,7 +79,8 @@ path('logout/',views.logoutt,name='logout'),
     path('shipping/', views.shipping, name='shipping'),
     path(
        'developer/',views.developer,name='developer'
-    )
+    ),
+    path('deal_day/',views.deal_day,name='deal_day')
 
 
 
