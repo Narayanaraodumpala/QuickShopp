@@ -190,6 +190,11 @@ def login_signin(request):
             user = authenticate(username=usr, password=pwd)
             if user:
                 login(request, user)
+                Email = request.user.email
+                print(' register email=', Email)
+                Subject = " Hello " + request.user.username + "...! This Is Quick Shoppieee.This Mail Reagarding for Login With Us...."
+                Message = " Mr/Ms " + request.user.username + "...! You are Just Login With QuickShoppiee ..Thank U For Login.. We Will Send  You  More Updates For Our Products  ..."
+                send_mail(Subject, Message, EMAIL_HOST_USER, [Email])
                 return redirect('home')
             else:
                 error = True
@@ -214,6 +219,13 @@ def signup(request):
             if not userdata:
                 user = User.objects.create_user(username=u, password=p, email=e)
                 UserDetail.objects.create(usr=user, image=i, mobile=m, address=a)
+
+                Email = e
+                print(' register email=', Email)
+                Subject = " Hello " + u + "...! This Is Quick Shoppieee.This Mail Reagarding for Memebership With Us...."
+                Message = " Mr/Ms " + u + "...! You are Just Registered With QuickShoppiee ..Thank U For Registration.. We Will Send U Updates For Our Products  ..."
+                send_mail(Subject, Message, EMAIL_HOST_USER, [Email])
+
                 return redirect('login_signin')
 
             else:
@@ -245,6 +257,7 @@ def add_to_cart(request,pk):
             return render(request,'buy_product.html',{'message':'sorry this item  is already added'})
        else:
            AddtocartModel.objects.create(usr=usr, pro=prodata, quantity=quantity, total_price=total, size=size)
+
    return redirect('view_cart')
 
 
@@ -362,5 +375,5 @@ def deal_day(request):
 
 
 def season_sale(request):
-
-    return render(request,'season_sale.html')
+    res = ProductModel.objects.filter(product_categire=23)
+    return render(request,'season_sale.html',{'res': res})
